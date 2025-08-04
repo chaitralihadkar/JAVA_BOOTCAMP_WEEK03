@@ -1,0 +1,27 @@
+interface Playable
+{
+    public abstract void play();
+    default void pause()
+    {
+        System.out.println("Pausing song");
+    }
+}
+
+class Song implements Playable
+{
+    public void play()
+    {
+        System.out.println("Playing song");
+    }
+}
+
+public class InterfaceImplementation
+{
+    public static void main(String[] args)
+    {
+        Playable obj = new Song();
+
+        obj.play();
+        obj.pause();
+    }
+}
