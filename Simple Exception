@@ -1,3 +1,5 @@
+package com.bootcamp.week03;
+
 class NegativeNumberException extends Exception
 {
     public NegativeNumberException(String string)
