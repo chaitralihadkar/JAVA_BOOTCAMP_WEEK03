@@ -1,0 +1,43 @@
+package com.bootcamp.week03;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class StudentList
+{
+    public static void main(String[] args)
+    {
+        List<String> list = new ArrayList<>();
+
+        list.add("Chaitrali");
+        list.add("Nishant");
+        list.add("Aryan");
+        list.add("Chaitrali");
+        list.add("Gargi");
+        list.add("Devansh");
+        list.add("Nikita");
+        list.add("Rudra");
+        list.add("Gargi");
+        list.add("Devansh");
+
+        System.out.println("Original Students List : " + list);
+
+        List<String> newlist = new ArrayList<>();
+
+        for(String student : list)
+        {
+            if(!newlist.contains(student))
+            {
+                newlist.add(student);
+            }
+        }
+
+        System.out.println("Students List (duplicates removed) : "+newlist);
+        
+        Collections.sort(newlist);
+
+        System.out.println("Sorted alphabetically: "+newlist);
+
+    }
+}
