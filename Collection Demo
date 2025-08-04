@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class CollectionDemo
+{
+    public static void main(String[] args)
+    {
+        System.out.println("Original List with Duplicates:");
+
+        List<String> list = new ArrayList<>();
+
+        list.add("Mango");
+        list.add("Apple");
+        list.add("Guava");
+        list.add("Mango");
+        list.add("Cherry");
+        list.add("Cherry");
+
+        System.out.println(list);
+
+        Set<String> set = new HashSet<>(list);
+
+        System.out.println("\nSet without duplicates:");
+
+        System.out.println(set);
+
+    }
+}
