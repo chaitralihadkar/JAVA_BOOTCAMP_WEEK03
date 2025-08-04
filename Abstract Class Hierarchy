@@ -1,0 +1,47 @@
+package com.bootcamp.week03;
+
+abstract class Vehicle
+{
+    public abstract void start();
+    public void stop() //concrete method
+    {
+        System.out.println("Stoping vehicle.");
+    }
+}
+
+class Car extends Vehicle
+{
+    public void start()
+    {
+        System.out.println("Starting Car.");
+    }
+}
+
+class Bike extends Vehicle
+{
+    public void start()
+    {
+        System.out.println("Starting Bike.");
+    }
+}
+
+public class VehicleTest
+{
+    public static void main(String[] args)
+    {
+        Car obj = new Car();
+        
+        Bike obj1 = new Bike();
+
+        System.out.println();
+
+        obj.start();
+        obj.stop();
+
+        System.out.println();
+
+        obj1.start();
+        obj1.stop();
+
+    }
+}
