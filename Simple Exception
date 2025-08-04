@@ -1,0 +1,37 @@
+class NegativeNumberException extends Exception
+{
+    public NegativeNumberException(String string)
+    {
+       super(string);
+    }
+}
+
+public class SimpleException
+{
+    public static void checkPositive(int number) throws NegativeNumberException
+    {
+        if (number < 0)
+        {
+            throw new NegativeNumberException("\n" + number + " is not positive number");
+        }
+        else
+        {
+            System.out.println("Positive number: " + number);
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        SimpleException obj = new SimpleException();
+        try
+        {
+            obj.checkPositive(5);
+
+            obj.checkPositive(-10);
+        }
+        catch (NegativeNumberException e)
+        {
+            System.out.println("Negative number is not allowed "+e.getMessage());
+        }
+    }
+}
