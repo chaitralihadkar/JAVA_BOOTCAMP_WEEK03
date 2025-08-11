@@ -1,0 +1,30 @@
+package com.bootcamp.week03;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class IteratorDemo
+{
+    public static void main(String[] args)
+    {
+        String input = "After the announcement Employees gathered in the conference room for updates";
+
+        List<String> strings = new ArrayList<>(List.of(input.split(" ")));
+        System.out.println("Original List: " + strings);
+
+        for (Iterator<String> iterator = strings.iterator(); iterator.hasNext(); ) {
+            String string = iterator.next();
+
+            String lower = string.toLowerCase();
+
+            if (lower.startsWith("a") || lower.startsWith("e") || lower.startsWith("i") ||
+                    lower.startsWith("o") || lower.startsWith("u"))
+            {
+                iterator.remove();
+            }
+        }
+
+        System.out.println("After removing words starting with vowels: " + strings);
+    }
+}
